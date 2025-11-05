@@ -1,0 +1,9 @@
+.array-container {
+  width: 70%;
+  height: 10rem;
+  margin: 2rem;
+  background-color: var(--color-bg-3);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

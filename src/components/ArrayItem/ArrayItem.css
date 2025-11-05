@@ -1,0 +1,6 @@
+.array-item {
+  height: 6rem;
+  width: 3rem;
+  background-color: var(--color-bg-2);
+  transition: order 1s;
+}

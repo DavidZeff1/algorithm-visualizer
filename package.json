@@ -5,10 +5,11 @@
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
-    "build": "parcel build"
+    "build": "parcel build",
+    "test": "jest --watch"
   },
-  "dependencies": {},
   "devDependencies": {
+    "jest": "^30.2.0",
     "parcel": "^2.14.0"
   }
 }

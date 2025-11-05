@@ -1,8 +1,17 @@
-html {
-  color-scheme: light dark;
-  font-family: system-ui;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
+:root {
+  --color-bg-4: #1b3c53;
+  --color-bg-3: #234c6a;
+  --color-bg-2: #456882;
+  --color-bg-1: #d2c1b6;
+  --color-text: white;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", serif;
+  transition: background-color 0.5s;
+}
+
+#app[data-theme="dark"] {
+  background-color: var(--color-bg-4);
+  color: var(--color-text);
 }
