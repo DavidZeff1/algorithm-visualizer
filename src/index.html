@@ -1,12 +1,36 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Algorithm Visualizer</title>
-    <link rel="stylesheet" href="style.css" />
+    <style>
+      canvas {
+        border: 1px solid black;
+      }
+      .controls {
+        margin: 20px;
+      }
+    </style>
   </head>
-  <body id="app" data-theme="dark">
+  <body>
+    <div class="controls">
+      <select id="algorithm">
+        <option value="bubble">Bubble Sort</option>
+        <option value="quick">Quick Sort</option>
+      </select>
+
+      <input
+        id="array"
+        type="text"
+        placeholder="5,3,8,1,9"
+        value="5,3,8,4,1,9,2"
+      />
+
+      <input id="speed" type="range" min="1" max="10" value="5" />
+
+      <button id="run">Run</button>
+    </div>
+
+    <canvas id="visualizer" width="800" height="400"></canvas>
+
     <script type="module" src="./main.js"></script>
   </body>
 </html>
