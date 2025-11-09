@@ -4,6 +4,34 @@
   --color-bg-2: #456882;
   --color-bg-1: #d2c1b6;
   --color-text: white;
+
+  /* Button colors */
+  --color-primary: #3b82f6;
+  --color-primary-hover: #2563eb;
+  --color-primary-active: #1d4ed8;
+
+  --color-secondary: #8b7355;
+  --color-secondary-hover: #6f5c44;
+  --color-secondary-active: #5a4936;
+
+  --color-accent: #e8a87c;
+  --color-accent-hover: #d69463;
+  --color-accent-active: #c4804a;
+
+  --color-success: #22c55e;
+  --color-success-hover: #16a34a;
+
+  --color-danger: #ef4444;
+  --color-danger-hover: #dc2626;
+
+  --color-warning: #f59e0b;
+  --color-warning-hover: #d97706;
+
+  /* Neutral/UI colors */
+  --color-border: #4a6b82;
+  --color-disabled: #64748b;
+  --color-disabled-text: #94a3b8;
+
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -11,7 +39,106 @@
   transition: background-color 0.5s;
 }
 
-#app[data-theme="dark"] {
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body[data-theme="dark"] {
   background-color: var(--color-bg-4);
   color: var(--color-text);
+}
+body {
+  height: 100vh;
+}
+
+header {
+  padding: 1rem;
+  background-color: var(--color-bg-3);
+  height: 5rem;
+  text-align: center;
+}
+
+#settings-container {
+  display: flex;
+  gap: 4rem;
+  background-color: var(--color-bg-3);
+  height: 4rem;
+  border-radius: 10px;
+  padding: 1rem 6rem;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+button {
+  min-width: 6rem;
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: none;
+  background-color: var(--color-success);
+}
+button:hover {
+  background-color: var(--color-success-hover);
+  cursor: pointer;
+}
+
+select {
+  padding: 0.5rem;
+  background-color: var(--color-accent);
+  border-radius: 10px;
+}
+select:hover {
+  background-color: var(--color-accent-hover);
+}
+
+#visualizer-container {
+  padding: 1rem;
+  height: 30rem;
+  margin: 5%;
+  border-radius: 10px;
+  background-color: var(--color-bg-1);
+}
+
+footer {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: auto;
+  color: white;
+  margin-bottom: 0px;
+  padding: 0px;
+  text-align: center;
+}
+footer:hover {
+  color: rgb(222, 221, 221);
+}
+
+#array-visualizer {
+  background-color: var(--color-bg-3);
+  border-radius: 10px;
+  height: 70%;
+  position: relative;
+  padding: 2rem;
+  transition: all 1s;
+}
+
+.array-element {
+  text-align: center;
+  position: absolute;
+  background-color: #16a34a;
+  border-radius: 10px;
+  height: 2px;
+  width: 3rem;
+  bottom: 50%;
+}
+
+.comparing {
+  background-color: var(--color-accent);
+}
+
+.swapping {
+  background-color: var(--color-danger);
 }

@@ -1,36 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <style>
-      canvas {
-        border: 1px solid black;
-      }
-      .controls {
-        margin: 20px;
-      }
-    </style>
+    <meta charset="utf-8" />
+    <title>Algo Visualizer</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body>
-    <div class="controls">
-      <select id="algorithm">
-        <option value="bubble">Bubble Sort</option>
-        <option value="quick">Quick Sort</option>
-      </select>
-
-      <input
-        id="array"
-        type="text"
-        placeholder="5,3,8,1,9"
-        value="5,3,8,4,1,9,2"
-      />
-
-      <input id="speed" type="range" min="1" max="10" value="5" />
-
-      <button id="run">Run</button>
-    </div>
-
-    <canvas id="visualizer" width="800" height="400"></canvas>
-
-    <script type="module" src="./main.js"></script>
+  <body data-theme="dark">
+      <header>
+        <h1>Algo Visualizer</h1>
+      </header>
+      <section id="visualizer-container">
+        <ul id='settings-container'>
+          <label for="sort-type">
+            Choose Sort
+            <select id="sort-type">
+              <option>Bubble Sort</option>
+              <option>Insertion Sort</option>
+            </select>
+          </label>
+          <label for="array-type">
+              Choose Array
+            <select id="array-type">
+              <option>[5, 4, 3, 2, 1]</option>
+              <option>[1, 2, 3, 4, 5]</option>
+            </select>
+          </label>
+          <button id='Play-button' name='Play'>Play</button>
+          <button id='Pause-button' name='Pause'>Pause</button>
+          <label for='speed'>
+            Speed
+            <input id='speed' type="range" min="-10" max="10" />
+          <label>
+        </ul>
+        <section id="array-visualizer">
+        </section>
+      </section>
+    <a href="https://www.david-zeff-portfolio.com/"><footer>© David Zeff</footer></a>
+    <script type="module" src="./index.ts"></script>
   </body>
 </html>
