@@ -166,3 +166,19 @@ footer:hover {
   top: 50%;
   transform: translate(-50%, -50%);
 }
+
+.marked-pivot {
+  background-color: #f59e0b !important;
+}
+
+.marked-minimum {
+  background-color: #8b5cf6 !important;
+}
+
+.marked-current {
+  background-color: #06b6d4 !important;
+}
+
+.setting {
+  background-color: #ec4899 !important;
+}
