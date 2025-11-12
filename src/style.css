@@ -94,16 +94,16 @@ select:hover {
 }
 
 #visualizer-container {
+  margin: 1rem;
   padding: 1rem;
-  height: 30rem;
-  margin: 5%;
+  height: 40rem;
   border-radius: 10px;
   background-color: var(--color-bg-1);
 }
 
 footer {
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
   height: auto;
@@ -111,6 +111,9 @@ footer {
   margin-bottom: 0px;
   padding: 0px;
   text-align: center;
+  background-color: black;
+  padding: 4px;
+  border-radius: 10px;
 }
 footer:hover {
   color: rgb(222, 221, 221);
@@ -119,7 +122,7 @@ footer:hover {
 #array-visualizer {
   background-color: var(--color-bg-3);
   border-radius: 10px;
-  height: 70%;
+  height: 80%;
   position: relative;
   padding: 2rem;
   transition: all 1s;
@@ -133,6 +136,7 @@ footer:hover {
   height: 2px;
   width: 3rem;
   bottom: 50%;
+  transition: transform 1.5s ease, background-color 0.3s ease;
 }
 
 .comparing {
@@ -141,4 +145,24 @@ footer:hover {
 
 .swapping {
   background-color: var(--color-danger);
+}
+
+#message-container {
+  position: relative;
+  background-color: #16a34a;
+  text-align: center;
+  font-size: larger;
+  width: fit-content;
+  left: 50%;
+}
+
+#array-container {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 40rem;
+  height: 10rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
