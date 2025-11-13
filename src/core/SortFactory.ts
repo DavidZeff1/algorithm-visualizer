@@ -1,4 +1,3 @@
-// core/SortFactory.ts
 import bubbleSort from "../entities/BubbleSort";
 import insertionSort from "../entities/InsertionSort";
 import { selectionSort } from "../entities/SelectionSort";
