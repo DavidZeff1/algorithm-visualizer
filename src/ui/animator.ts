@@ -1,4 +1,5 @@
 import Step from "../types/step";
+import { Logger } from "../ui/logger";
 
 export default class Animator {
   isCancelled: boolean;
@@ -74,6 +75,8 @@ export default class Animator {
   }
 
   async runAnimations(): Promise<void> {
+    const logger = new Logger();
+    logger.clear();
     for (let i = 0; i < this.animationSteps.length; i++) {
       while (this.isPaused) {
         await new Promise<void>((resolve) => {
@@ -91,11 +94,17 @@ export default class Animator {
         return;
       }
       if (this.animationSteps[i].type == "compare") {
+        logger.log(
+          `Comparing ${this.animationSteps[i].id1} - ${this.animationSteps[i].id2}`
+        );
         await this.compareAnimation(
           this.animationSteps[i].id1,
           this.animationSteps[i].id2
         );
       } else if (this.animationSteps[i].type == "swap") {
+        logger.log(
+          `Swapping ${this.animationSteps[i].id1} - ${this.animationSteps[i].id2}`
+        );
         await this.swapAnimation(
           this.animationSteps[i].id1,
           this.animationSteps[i].id2

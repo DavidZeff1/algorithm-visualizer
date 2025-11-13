@@ -7,6 +7,4 @@ export default class Step {
     this.id1 = id1;
     this.id2 = id2;
   }
-
-  Animate(func: Function) {}
 }

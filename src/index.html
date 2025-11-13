@@ -40,8 +40,37 @@
           <div id="array-container">
           </div>
         </section>
+        <section id="logger-visualizer"></section>
+        <section id="explanation-visualizer"></section>
       </section>
     <a href="https://www.david-zeff-portfolio.com/"><footer>© David Zeff</footer></a>
     <script type="module" src="./index.ts"></script>
+    <script>
+  const explanation = `
+function bubbleSort(array: number[]) {
+    const steps: Step[] = [];
+    let swapped;
+    for (let i = 0; i < array.length; i++) {
+      for (let j = 0; j < array.length - 1; j++) {
+        if (j == 0) {
+          swapped = false;
+        }
+        if (array[j] > array[j + 1]) {
+          let temp = array[j];
+          array[j] = array[j + 1];
+          array[j + 1] = temp;
+          swapped = true;
+        }
+      }
+      if (swapped == false) {
+        break;
+      }
+    }
+  }
+`;
+
+  document.getElementById('explanation-visualizer').textContent = explanation;
+</script>
+
   </body>
 </html>
