@@ -6,71 +6,39 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body data-theme="dark">
-      <header>
-        <h1>Algo Visualizer</h1>
-      </header>
-      <section id="visualizer-container">
-        <ul id='settings-container'>
-          <label for="sort-type">
-            Choose Sort
-            <select id="sort-type">
-              <option>Bubble Sort</option>
-              <option>Insertion Sort</option>
-              <option>Selection Sort</option>
-              <option>Quick Sort</option>
-              <option>Merge Sort</option>
-            </select>
-          </label>
-          <label for="array-type">
-              Choose Array
-            <select id="array-type">
-              <option>[5, 4, 3, 2, 1]</option>
-              <option>[1, 2, 3, 4, 5]</option>
-              <option>[3, 5, 1, 4, 2]</option>
-            </select>
-          </label>
-          <button id='play-button' name='Play'>Play</button>
-          <button id='pause-button' name='Pause'>Pause</button>
-          <label for='speed'>
-            Speed
-            <input id='speed' type="range" min="-10" max="10" />
-          <label>
-        </ul>
-        <section id="array-visualizer">
-          <div id="array-container">
-          </div>
-        </section>
-        <section id="logger-visualizer"></section>
-        <section id="explanation-visualizer"></section>
+    <header>
+      <h1>Algo Visualizer</h1>
+    </header>
+    <section id="visualizer-container">
+      <ul id="settings-container">
+        <label for="sort-type">
+          Choose Sort
+          <select id="sort-type">
+            <option>Bubble Sort</option>
+            <option>Insertion Sort</option>
+            <option>Selection Sort</option>
+          </select>
+        </label>
+        <label for="array-type">
+          Choose Array
+          <select id="array-type">
+            <option>[5, 4, 3, 2, 1]</option>
+            <option>[1, 2, 3, 4, 5]</option>
+            <option>[3, 5, 1, 4, 2]</option>
+          </select>
+        </label>
+        <button id="play-button" name="Play">Play</button>
+        <button id="pause-button" name="Pause">Pause</button>
+      </ul>
+      <section id="array-visualizer">
+        <div id="array-container"></div>
       </section>
-    <a href="https://www.david-zeff-portfolio.com/"><footer>© David Zeff</footer></a>
+      <section id="logger-visualizer"></section>
+      <section id="explanation-visualizer"></section>
+    </section>
+    <a href="https://www.david-zeff-portfolio.com/"
+      ><footer>© David Zeff</footer></a
+    >
     <script type="module" src="./index.ts"></script>
-    <script>
-  const explanation = `
-function bubbleSort(array: number[]) {
-    const steps: Step[] = [];
-    let swapped;
-    for (let i = 0; i < array.length; i++) {
-      for (let j = 0; j < array.length - 1; j++) {
-        if (j == 0) {
-          swapped = false;
-        }
-        if (array[j] > array[j + 1]) {
-          let temp = array[j];
-          array[j] = array[j + 1];
-          array[j + 1] = temp;
-          swapped = true;
-        }
-      }
-      if (swapped == false) {
-        break;
-      }
-    }
-  }
-`;
-
-  document.getElementById('explanation-visualizer').textContent = explanation;
-</script>
-
   </body>
 </html>

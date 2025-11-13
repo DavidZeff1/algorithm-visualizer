@@ -1,20 +1,17 @@
-import Step from "./step";
-
-export function selectionSort(arr: number[]): Step[] {
+export default `
+function selectionSort(arr: number[]): Step[] {
   const steps: Step[] = [];
   for (let i = 0; i < arr.length - 1; i++) {
     let minIndex = i;
     for (let j = i + 1; j < arr.length; j++) {
-      steps.push(new Step("compare", arr[minIndex], arr[j]));
       if (arr[j] < arr[minIndex]) {
         minIndex = j;
       }
     }
     if (minIndex !== i) {
-      steps.push(new Step("swap", arr[i], arr[minIndex]));
-
       [arr[i], arr[minIndex]] = [arr[minIndex], arr[i]];
     }
   }
   return steps;
 }
+`;

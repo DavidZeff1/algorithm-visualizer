@@ -1,15 +1,9 @@
-import Step from "./step";
-
-export default function insertionSort(arr: number[]): Step[] {
-  const steps: Step[] = [];
-
+export default `
+function insertionSort(arr: number[]): Step[] {
   for (let i = 1; i < arr.length; i++) {
     let k = i;
     while (k > 0) {
-      steps.push(new Step("compare", arr[k - 1], arr[k]));
-
       if (arr[k] < arr[k - 1]) {
-        steps.push(new Step("swap", arr[k - 1], arr[k]));
         const temp = arr[k];
         arr[k] = arr[k - 1];
         arr[k - 1] = temp;
@@ -19,6 +13,5 @@ export default function insertionSort(arr: number[]): Step[] {
       }
     }
   }
-
-  return steps;
 }
+`;

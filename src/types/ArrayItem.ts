@@ -2,7 +2,7 @@ export class ArrayItem {
   swapped: boolean | null;
   compared: boolean | null;
   id: number | null;
-  heightOffset = 2;
+  heightOffset = 3;
   leftOffset = 5;
   height: number | null;
   left: number | null;

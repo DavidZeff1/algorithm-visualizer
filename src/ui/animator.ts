@@ -1,4 +1,4 @@
-import Step from "../types/step";
+import Step from "../entities/step";
 import { Logger } from "../ui/logger";
 
 export default class Animator {

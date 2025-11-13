@@ -1,28 +1,23 @@
 import Animator from "./ui/animator";
-import bubbleSort from "./entities/BubbleSort";
 import { FrameInitializer } from "./ui/frameInitializer";
+import { AnimatorManager } from "./core/AnimatorManager";
+import { Controls } from "./ui/Controls";
+import { SortFactory, SortType } from "./core/SortFactory";
+
 const frameInitializer = new FrameInitializer();
-const playbutton = document.getElementById("play-button");
-const pauseButton = document.getElementById("pause-button");
-const animatorList: Animator[] = [];
-if (playbutton) {
-  playbutton.onclick = () => {
+const animatorManager = new AnimatorManager();
+
+new Controls({
+  onPlay: (array: number[], sortType: SortType) => {
     frameInitializer.reset();
-    while (animatorList.length > 0) {
-      animatorList.pop()?.setCancel();
-    }
-    const arr = document.getElementById("array-type") as HTMLSelectElement;
-    const array = JSON.parse(arr.value);
-    frameInitializer.initialize(array);
-    const animator = new Animator(bubbleSort(array));
-    animatorList.push(animator);
-    if (pauseButton) {
-      pauseButton.onclick = () => {
-        animatorList.forEach((animator) => {
-          animator.setPause();
-        });
-      };
-    }
-    animator.runAnimations();
-  };
-}
+    frameInitializer.initialize(array, sortType);
+    animatorManager.cancelAll();
+    const steps = SortFactory.create(sortType, array);
+    const animator = new Animator(steps);
+    animatorManager.run(animator);
+  },
+
+  onPause: () => {
+    animatorManager.pauseAll();
+  },
+});

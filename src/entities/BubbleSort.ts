@@ -1,4 +1,4 @@
-import Step from "../types/step";
+import Step from "./step";
 
 export default function bubbleSort(array: number[]): Step[] {
   const steps: Step[] = [];
@@ -11,9 +11,9 @@ export default function bubbleSort(array: number[]): Step[] {
       steps.push(new Step("compare", array[j], array[j + 1]));
       if (array[j] > array[j + 1]) {
         steps.push(new Step("swap", array[j], array[j + 1]));
-        let temp = array[j];
-        array[j] = array[j + 1];
-        array[j + 1] = temp;
+        array[j] = array[j] ^ array[j + 1];
+        array[j + 1] = array[j] ^ array[j + 1];
+        array[j] = array[j] ^ array[j + 1];
         swapped = true;
       }
     }
